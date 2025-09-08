@@ -1,7 +1,7 @@
 #include "prime.hpp"
 #include <cmath>
 
-bool isPrimeHalf(int n, long long* modOps) {
+bool isPrimeHalf(int n, std::shared_ptr<long long> modOps) {
     // base cases; no mod operations
     if (n <= 1) {
         return false;
@@ -31,7 +31,7 @@ bool isPrimeHalf(int n, long long* modOps) {
     return true;
 }
 
-bool isPrimeSqrt(int n, long long* modOps) {
+bool isPrimeSqrt(int n, std::shared_ptr<long long> modOps) {
     // base cases; no mod operations
     if (n <= 1) {
         return false;
@@ -66,11 +66,9 @@ long long countModOps(PrimeFn isPrime, int lo, int hi) {
     if (isPrime == nullptr || hi < lo) {
         return 0;
     }
-    long long totalOps = 0;
+    std::shared_ptr<long long> totalOps;
     for (int i = lo; i <= hi; i++) {
-        long long ops = 0;
-        isPrime(i, &ops);
-        totalOps += ops;
+        isPrime(i, totalOps);
     }
-    return totalOps;
+    return *totalOps;
 }
