@@ -106,65 +106,64 @@ TEST_CASE("Composite numbers", "[prime][composite]") {
 }
 
 // Testing mod operation counts
-/*
+
 TEST_CASE("Mod operation counting for composites", "[prime][composite][performance]") {
-    std::shared_ptr<long long> modOps;
-    
+    std::shared_ptr<long long> modOps = std::make_shared<long long>(0);
+
     SECTION("Early termination for even composites") {
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(4, modOps);
         REQUIRE(*modOps == 1);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(4, modOps);
         REQUIRE(*modOps == 1);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(100, modOps);
         REQUIRE(*modOps == 1);
 
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(100, modOps);
         REQUIRE(*modOps == 1);
     }
     
     SECTION("Early termination for perfect squares") {
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(9, modOps);
         REQUIRE(*modOps == 2);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(9, modOps);
         REQUIRE(*modOps == 2);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(25, modOps);
         REQUIRE(*modOps == 3);
 
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(25, modOps);
         REQUIRE(*modOps == 3);
     }
     
     SECTION("Multiple factors require more checks") {
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(15, modOps);
         REQUIRE(*modOps == 2);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(15, modOps);
         REQUIRE(*modOps == 2);
         
-        modOps = 0;
+        *modOps = 0;
         isPrimeHalf(35, modOps);
         REQUIRE(*modOps == 3);
 
-        modOps = 0;
+        *modOps = 0;
         isPrimeSqrt(35, modOps);
         REQUIRE(*modOps == 3);
     }
 }
-*/
 
 // Test edge cases
 TEST_CASE("Edge cases", "[prime][edge]") {

@@ -66,7 +66,7 @@ long long countModOps(PrimeFn isPrime, int lo, int hi) {
     if (isPrime == nullptr || hi < lo) {
         return 0;
     }
-    std::shared_ptr<long long> totalOps;
+    std::shared_ptr<long long> totalOps = std::make_shared<long long>(0);
     for (int i = lo; i <= hi; i++) {
         isPrime(i, totalOps);
     }
