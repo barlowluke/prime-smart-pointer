@@ -1,5 +1,0 @@
-/home/luke/prime-smart-pointer/build/CMakeFiles/prime.dir
-/home/luke/prime-smart-pointer/build/CMakeFiles/my_test.dir
-/home/luke/prime-smart-pointer/build/CMakeFiles/test.dir
-/home/luke/prime-smart-pointer/build/CMakeFiles/edit_cache.dir
-/home/luke/prime-smart-pointer/build/CMakeFiles/rebuild_cache.dir
